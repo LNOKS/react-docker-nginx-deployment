@@ -37,7 +37,7 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           passphrase: ${{ secrets.SERVER_SSH_PASSPHRASE }}
           script: |
-            cd /${{ secrets.SERVER_USERNAME }}/stacy-mills-web
+            cd /${{ secrets.SERVER_USERNAME }}/web
             docker stop $(docker ps -a -q)
             docker login -u ${{secrets.DOCKER_USER}} -p ${{ secrets.DOCKER_PASSWORD }}
             docker pull ${{secrets.DOCKER_USER}}/${{secrets.DOCKER_REPO}}:web-latest
